@@ -4,3 +4,4 @@ Jinja2==3.0.3
 werkzeug==2.0.2
 itsdangerous==2.0.1
 motor==2.5.1  # MongoDB ke liye async driver
+SQLAlchemy==1.4.22  # SQLAlchemy library
