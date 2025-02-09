@@ -16,6 +16,14 @@ from sqlalchemy import (
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from sqlalchemy.sql import func
+from motor.motor_asyncio import AsyncIOMotorClient
+
+# MongoDB connection
+client = AsyncIOMotorClient(environ.get("DATABASE_URL"))
+db = client.get_database()
+
+# Example collection
+users_collection = db.get_collection("users")
 
 logger.info("Loading variables from .env file")
 load_dotenv()
